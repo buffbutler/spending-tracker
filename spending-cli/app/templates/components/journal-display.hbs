@@ -1,0 +1,35 @@
+<div class="journal-display">
+    <div class="journal-edit {{if selected "journal-edit-active"}}" style="visibility: hidden;">
+        <div {{action "unselectItem"}} class="linkbutton">Unselect</div>
+        <div>
+            Category:
+            {{input value=path placeholder="Category"}}
+        </div>
+        <button {{action "setSelectedPath"}}>Assign</button>
+        <button {{action "setRemoved"}}>Remove</button>
+    </div>
+
+    <div class="journal-rows">
+    {{#each journal as |journalitem|}}
+        <div {{action "selectItem" journalitem}} class="journal-row {{if journalitem.selected "selected"}}">
+            <div>
+                Name: {{journalitem.name}}
+            </div>
+            <div>
+                Date: {{journalitem.transaction_date}}
+            </div>
+            <div>
+                Amount: {{format-currency journalitem.amount}}
+            </div>
+            {{#if journalitem.path_classification}}
+            <div>
+                Category:
+                <div class="linkbutton" stlye="display:inline-block" {{action "openRule" journalitem}}>
+                    {{journalitem.path_classification}}
+                </div>
+            </div>
+            {{/if}}
+        </div>
+    {{/each}}
+    </div>
+</div>

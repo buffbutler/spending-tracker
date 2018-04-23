@@ -1,0 +1,30 @@
+<div class="spending-panel spending-panel-filter q-dropzone">
+    {{#journal-filter journal=model.journal
+                      filterMode=model.searchFilterMode
+                      ruleSearchList=model.ruleSearchList
+                      saveChangesHandler=saveChanges
+                      as |filteredJournal|}}
+
+    <div class="spending-panel-journal">
+        {{journal-display journal=filteredJournal 
+                          activeRule=model.activeRule
+                          activeRuleMode=model.activeRuleMode }}
+
+    </div>
+
+    {{/journal-filter}}
+</div>
+<div class="spending-panel" style="position: absolute; right: 0px; top: 0px; bottom: 0px; width: 250px;">
+    {{journal-report journal=model.journal }}
+
+</div>
+<div class="spending-panel" style="position: absolute; left:0px; right: 250px; bottom: 0px; height: 200px;">
+    {{rule-editor journal=model.journal 
+                  rules=model.rules 
+                  searchFilterMode=model.searchFilterMode 
+                  ruleSearchList=model.ruleSearchList
+                  mode=model.activeRuleMode
+                  record=model.activeRule }}
+</div>
+
+{{outlet}}

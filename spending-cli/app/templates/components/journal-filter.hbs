@@ -1,0 +1,18 @@
+<div class="journal-filter-category">
+    <div class="header">Show:</div>
+    
+    <div {{action "setFilterMode" "uncategorized"}} class="journal-filter-category-switch {{if filterModeUnCategorized "selected"}}">Un Categorized</div>
+    <div {{action "setFilterMode" "categorized"}} class="journal-filter-category-switch {{if filterModeCategorized "selected"}}">Categorized</div>
+    <div {{action "setFilterMode" ""}} class="journal-filter-category-switch {{if filterModeAll "selected"}}">All</div>
+    <div class="journal-filter-category-switch {{if filterModeRule "selected"}}" style="visibility: hidden;">Rule</div>
+
+    <div class="save-button" {{action "saveChanges"}}>Save Changes</div>
+</div>
+
+<div class="journal-filter-search">
+    <div class="header">Search:</div>
+    {{input value=search
+        key-up=(action 'refreshSearch')
+        placeholder="Search"}}
+</div>
+{{yield journal_display}}

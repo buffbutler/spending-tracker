@@ -1,0 +1,46 @@
+{% extends 'spending_api/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <input type="hidden" value="{{ workspace_id }}" />
+    {% csrf_token %}
+
+    <meta name="spending-cli/config/environment" content="{{client_conf | urlencode}}" />
+
+    <link integrity="" rel="stylesheet" href="/static/vendor.css">
+    <link integrity="" rel="stylesheet" href="/static/spending-cli.css">
+
+    <script src="/static/vendor.js"></script>
+    <script src="/static/spending-cli.js"></script>
+
+    <script type="text/javascript" src="/static/spending/dropload.js"></script>
+
+    <script type="text/javascript">
+
+    var createDropzone = function(callback) {
+        var ctl = document.querySelectorAll(".q-dropzone");
+
+        var myDropzone = new Dropzone(ctl[0], {
+            url: "./upload",
+            method: "post",
+            clickable: false,
+            createImageThumbnails: false,
+            addRemoveLinks: false,
+            accept: function(file, done) {
+                done();
+            },
+            success: function(file, http, progress) {
+                if (http.error) {
+                    window.alert("File could not be read: " + http.error);
+                    return;
+                } else {
+                    callback(http.file);
+                }
+            }
+        });
+    }
+
+    </script>
+{% endblock %}

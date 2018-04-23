@@ -1,0 +1,67 @@
+{% extends 'spending_api/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div id="drop-area">
+  <link href='/static/spending/dropload.css' rel='stylesheet' type='text/css'>
+
+  <h1>About</h1>
+
+  This is a simple transaction classification tool.  You can download your transactions from your bank
+  and load them here.  Then break the transactions down into categories to create a spending report.
+
+  <br />
+  <br />
+
+  This was done as a project to learn EmberJs which seems well suited for accounting type projects.
+
+  <h1>Start a new session!</h1>
+
+  <div id="qdropzone">
+    <form method="post" action="." class="q-dropzone q-needsclick" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="dz-message">
+        Drop a bank transaction .csv .ofx or .qfx file here or click to upload.
+      </div>
+    </form>
+  </div>
+
+  <script type="text/javascript" src="/static/spending/dropload.js"></script>
+
+  <h1>or start a demo session</h1>
+
+  <form action="./demo" method="post">
+    {% csrf_token %}
+    <button class="btn btn-primary" type="submit">View Demo</button>
+  </form>
+
+
+  <script type="text/javascript">
+
+    var ctl = document.querySelectorAll(".q-dropzone");
+
+    var myDropzone = new Dropzone(ctl[0], {
+      clickable: ctl[0],
+      createImageThumbnails: false,
+      addRemoveLinks: false,
+      accept: function(file, done) {
+        ctl[0].style.backgroundColor = "#bbbbbb";
+        done();
+      },
+      success: function(file, http, progress) {
+        if (http.error) {
+          window.alert("File could not be read: " + http.error);
+          ctl[0].style.backgroundColor = null;
+          return;
+        }
+
+        if (http.redirect) {
+          window.location.href = http.redirect;
+        }
+      }
+    });
+
+  </script>
+</div>
+{% endblock %}

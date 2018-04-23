@@ -1,0 +1,53 @@
+<div class="rule-editor">
+    <div class="rule-editor-header">
+        <div class="header">{{mode}} Category Batch Rule</div>
+        {{#if previous}}
+        <div class="linkbutton" {{action "modifyPrevious"}}>Modify Previous Rule</div>
+        {{/if}}
+    </div>
+    <div class="rule-editor-body">
+        <div>{{error}}</div>
+        <div class="rule-editor-row">
+            <div class="header">Name Contains:</div>
+            {{input value=expression}}
+        </div>
+        <div class="rule-editor-row rule-editor-row-range">
+            <div class="header">Amount Between:</div>
+            {{input value=amount_from}}
+            to
+            {{input value=amount_to}}
+        </div>
+        <div class="rule-editor-row">
+            <div class="header">Category:</div>
+            {{input value=path}}
+        </div>
+        <div class="rule-editor-options">
+            This rule will apply to all unassigned transacations.
+            You can also apply this rule to:
+            <br />
+            <div>
+                {{input type="checkbox" checked=assignPrevious}}
+                Apply to previously assigned rules
+            </div>
+            <div>
+                {{input type="checkbox" checked=assignManual}}
+                Apply to manually assigned rules
+            </div>
+        </div>
+    </div>
+    <div class="rule-editor-footer">
+        <button {{action "saveRule"}} disabled="{{cannotcreate}}">{{mode}}</button>
+
+        {{#if isedit}}
+        <button {{action "undoRule"}}>Undo</button>
+
+        <button {{action "resetEditor"}}>Done</button>
+        {{else}}
+        <div>
+            {{matchset.length}} matches
+            <div {{action "showMatches"}} class="linkbutton">show</div>
+        </div>
+        {{/if}}
+        
+    </div>
+</div>

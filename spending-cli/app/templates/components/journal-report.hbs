@@ -1,0 +1,43 @@
+<div class="spending-report">
+{{#each report_data as |report_item|}}
+    <div class="spending-row">
+        {{#if report_item.color}}
+        <div style="background-color:{{report_item.color}}; height: 15px; width: 15px; border: solid 1px #aaaaaa;">&nbsp;</div>
+        <div style="font-weight: bold;">
+            {{report_item.header}}
+        </div>
+        {{else}}
+        <div style="height: 15px; width: 18px;">&nbsp;</div>
+        <div>
+            {{report_item.header}}
+        </div>
+        {{/if}}
+        
+        <div class="spending-value">
+            {{report_item.value}}
+        </div>
+    </div>
+{{/each}}
+</div>
+<div>
+    <svg width="200" height="200">
+
+    </svg>
+</div>
+{{#if show_help}}
+<div style="padding: 0px 5px 0px 5px">
+    <h2>Getting Started</h2>
+    At any time you can add more transactions by dragging another file in.  This currently doesn't
+    handle duplciates.
+    <br />
+    <br />
+    The middle list shows all your transactions.  You can click on one and categoryize it
+    by typing in a category and clicking "Apply."  You can remove the transaction from
+    the report by clicking remove.
+    <br />
+    <br />
+    The bottom section allows you to assign transactions based off of a batch "rule".  For example if
+    you set name contains to "Safway" and category to Groceries.  All transactions with safeway
+    in the name will be assigned to the Groceries category.
+</div>
+{{/if}}

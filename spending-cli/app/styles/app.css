@@ -1,0 +1,160 @@
+.journal-filter-category {
+    padding: 5px 5px 5px 5px;
+}
+
+.journal-filter-category > div {
+    display: inline-block;
+}
+
+.journal-filter-category-switch {
+    border: solid 1px #888888;
+    padding: 5px 5px 5px 5px;
+}
+
+.journal-filter-category-switch.selected {
+    background-color: #aaccff;
+    visibility: visible !important;
+}
+
+.arc path {
+    stroke: #fff;
+}
+
+.spending-report {
+    padding: 10px 10px 10px 10px;
+}
+
+.spending-report .spending-row {
+    display: block;
+}
+
+.spending-report .spending-row div {
+    display: inline-block;
+}
+
+.spending-report .spending-row .spending-value {
+    float: right;
+}
+
+
+.rule-editor {
+    padding: 5px 5px 5px 15px;
+}
+
+.rule-editor-footer * {
+    display: inline-block;
+}
+
+.rule-editor-header > div {
+    display: inline-block;
+}
+
+.rule-editor-header .header {
+    font-weight: bold;
+}
+
+.rule-editor-row {
+    padding: 3px 0px 0px 0px;
+}
+
+.rule-editor-row.rule-editor-row-range input {
+    width: 72px;
+}
+
+.rule-editor-options > div {
+    display: inline-block;
+}
+
+.rule-editor-body {
+    padding: 5px 0px 5px 0px;
+}
+
+.rule-editor-body .header {
+    display: inline-block;
+    width: 125px;
+}
+
+.linkbutton {
+    color: #0000ff;
+    text-decoration: underline;
+    display: inline-block;
+}
+
+.spending-panel {
+    background-color: #ededed;
+}
+
+.spending-panel-journal {
+    position: absolute;
+    top:80px; 
+    left: 0px; 
+    bottom: 0px; 
+    right: 0px;
+    overflow: auto;
+    background-color: #fff;
+}
+
+.journal-rows > div {
+    padding: 5px 15px 5px 15px;
+}
+
+.journal-rows > div:nth-child(odd) {
+    background-color: #ddeeff;
+}
+
+.journal-rows > div:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.spending-panel-filter {
+    position: absolute; 
+    top: 0px; 
+    left: 0px; 
+    right: 250px;
+    bottom: 200px;
+}
+
+.journal-filter-search {
+    padding-left: 5px;
+}
+
+.journal-filter-search .header,
+.journal-filter-category .header {
+    width: 60px;
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+.journal-filter-search > div {
+    display: inline-block;
+}
+
+.journal-edit {
+    position: absolute;
+    left: 15px;
+    background: #ffffff;
+    padding: 5px 5px 5px 5px;
+    border: solid 1px #aaaaaa;
+}
+
+.journal-edit > div {
+    display: inline-block;
+}
+
+.journal-edit-active {
+    visibility: visible !important;
+}
+
+.save-button {
+    float: right;
+    padding: 5px 5px 5px 5px;
+    border: solid 1px #aaaaaa;
+}
+
+.save-button:hover {
+    background-color: #aaccff;
+}
+
+.dz-preview {
+    display: none;
+}

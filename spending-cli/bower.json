@@ -1,0 +1,20 @@
+{
+  "name": "spending-cli",
+  "description": "Small description for spending-cli goes here",
+  "main": "",
+  "authors": [
+    "Mike Langlois <mjlanglois@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "d3": "^5.0.0"
+  }
+}
