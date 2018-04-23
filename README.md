@@ -27,12 +27,15 @@ To setup the client run:
 
 npm install
 
+bower install
+
 To run you would go:
 
 ember s
 
 
-Note this has the server and client seperate.  You can compile and bring the client to the server with a django command:
+Note this has the server and client seperate.  You can compile and bring the client to the server with a django command.  This triggers an ember build and then copies
+the files to spending_api/static so everything can be run on the server.
 
 python ./manage.py refreshclient
 
