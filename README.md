@@ -2,7 +2,7 @@ The client is written in emberjs and the server is written in django.  The point
 
 A working demo is located here:
 
-<todo>
+https://recalc.ca/spending/
 
 ## Server
 

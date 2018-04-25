@@ -91,5 +91,5 @@ print(ember_build.stdout.read())
 
 # restore the settings file
 print("restoring static file")
-shutil.copy(os.path.join(temp_root, "settings.py"), os.path.join(mount_root, "archive"))
+shutil.copy(os.path.join(temp_root, "./settings.py"), os.path.join(mount_root, "server/settings.py"))
 
