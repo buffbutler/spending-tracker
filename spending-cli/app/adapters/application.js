@@ -10,8 +10,14 @@ export default DS.RESTAdapter.extend({
 
     buildURL(modelName, id, snapshot, requestType) {
         let appstate = this.get('store').peekRecord('appstate', 1);
+
+        var host = this.get('host');
+
+        if (!host) {
+            host = "";
+        }
         
-        let result = this.get('host') + '/spending/api/workspace/' + appstate.get('wspid') + '/' + modelName;
+        let result = host + '/spending/api/workspace/' + appstate.get('wspid') + '/' + modelName;
 
         if (requestType == "updateRecord" || requestType == "deleteRecord") {
             result += '/' + id;

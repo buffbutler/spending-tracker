@@ -139,4 +139,4 @@ CORS_ORIGIN_ALLOW_ALL = True
 SAMPLE_WORKSPACE_ID = 12
 
 # the ember client configuration block, we mostly just modify the apiHost
-EMBER_CLIENT_CONF_JSON = '{"modulePrefix":"spending-cli","environment":"development","rootURL":"/","locationType":"auto","EmberENV":{"FEATURES":{},"EXTEND_PROTOTYPES":{"Date":false}},"APP":{"apiHost":"http://localhost:8000","name":"spending-cli","version":"0.0.0+a81dc291"},"exportApplicationGlobal":true}'
+EMBER_CLIENT_CONF_JSON = '{"modulePrefix":"spending-cli","environment":"development","rootURL":"/","locationType":"auto","EmberENV":{"FEATURES":{},"EXTEND_PROTOTYPES":{"Date":false}},"APP":{"apiHost":"35.196.159.42:8000","name":"spending-cli","version":"0.0.0+a81dc291"},"exportApplicationGlobal":true}'

@@ -1,5 +1,9 @@
 The client is written in emberjs and the server is written in django.  The point of this was just to learn the client and server stacks.
 
+A working demo is located here:
+
+<todo>
+
 ## Server
 
 You need the following dependencies:
@@ -51,8 +55,12 @@ python ./manage.py refreshclient
 
 This is seperated this way due to the complications of the ember build.  This could be resolved with a reverse proxy capable server to sit infront of these two pieces.
 
+## Packaging
+
 To generate a package for deploying to the server:
 
 ```
 python ./manage.py package
 ```
+
+On the server you can run publish.py to deliver the package to the webserver mount point.

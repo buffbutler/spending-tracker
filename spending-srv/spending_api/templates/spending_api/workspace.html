@@ -7,13 +7,19 @@
     <input type="hidden" value="{{ workspace_id }}" />
     {% csrf_token %}
 
-    <meta name="spending-cli/config/environment" content="{{client_conf | urlencode}}" />
-
     <link integrity="" rel="stylesheet" href="/static/vendor.css">
     <link integrity="" rel="stylesheet" href="/static/spending-cli.css">
 
     <script src="/static/vendor.js"></script>
     <script src="/static/spending-cli.js"></script>
+
+    <script type="text/javascript">
+
+        var APP = {
+            apiHost: "192.168.1.100"
+        };
+
+    </script>
 
     <script type="text/javascript" src="/static/spending/dropload.js"></script>
 

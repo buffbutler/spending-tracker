@@ -3,6 +3,7 @@ import { next, run} from '@ember/runloop';
 import { Promise } from 'rsvp';
 import $ from 'jquery';
 
+import config from '../../config/environment';
 
 export default Route.extend({
     actions: {
@@ -33,9 +34,14 @@ export default Route.extend({
         var wspid = transition.params["workspace"]["wspid"];
 
         var my = this;
+        var host = config.APP.apiHost;
+
+        if (!host) {
+            host = "";
+        }
 
         return $.ajax({
-            url: 'http://localhost:8000/spending/api/workspace/' + wspid
+            url: host + '/spending/api/workspace/' + wspid
         }).then((data) => {
             return new Promise(function (resolve) {
                 run(function() {
